@@ -237,7 +237,7 @@ export default function Home() {
           
           {/* Scroll indicator */}
           <motion.button 
-            onClick={() => scrollTo('features')}
+            onClick={() => scrollTo('presentation')}
             className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center text-white/30 hover:text-white/50 transition-colors"
             initial={{ opacity: 0 }}
             animate={{ opacity: isLoading ? 0 : 1 }}
@@ -246,6 +246,79 @@ export default function Home() {
             <span className="text-xs mb-2">Листайте</span>
             <ChevronDown className="w-5 h-5 bounce" />
           </motion.button>
+        </section>
+
+        {/* Video Presentation Section */}
+        <section id="presentation" className="py-20 relative">
+          <div className="max-w-6xl mx-auto px-4 md:px-6">
+            <div className="flex flex-col lg:flex-row items-center gap-12 md:gap-16">
+              
+              {/* Text Side */}
+              <ScrollSection className="flex-1 text-center lg:text-left order-2 lg:order-1">
+                <h2 className="text-3xl md:text-4xl font-bold mb-6">
+                  <span className="text-gradient">Личное обращение</span><br />
+                  от основателя
+                </h2>
+                <p className="text-white/60 text-lg mb-8 leading-relaxed">
+                  Узнайте за 1 минуту, почему Influenta меняет рынок рекламы в Telegram. 
+                  Честно, открыто и без лишней воды.
+                </p>
+                
+                <div className="flex flex-col gap-4">
+                  {[
+                    { title: 'Прозрачность', desc: 'Никаких скрытых комиссий и накруток' },
+                    { title: 'Скорость', desc: 'Запуск рекламной кампании за 2 минуты' },
+                    { title: 'Безопасность', desc: 'Гарантия результата или возврат средств' }
+                  ].map((item, i) => (
+                    <div key={i} className="flex items-start gap-4 p-4 rounded-2xl bg-white/5 border border-white/5 hover:border-blue-500/30 transition-colors">
+                      <div className="w-10 h-10 rounded-full bg-blue-500/10 flex items-center justify-center shrink-0">
+                        <div className="w-2 h-2 bg-blue-500 rounded-full animate-pulse" />
+                      </div>
+                      <div className="text-left">
+                        <h3 className="font-bold text-white">{item.title}</h3>
+                        <p className="text-white/40 text-sm">{item.desc}</p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </ScrollSection>
+
+              {/* Video Side (Vertical Phone Style) */}
+              <ScrollSection delay={0.2} className="flex-1 flex justify-center order-1 lg:order-2">
+                <div className="relative group w-[300px] md:w-[340px]">
+                  {/* Glow effect */}
+                  <div className="absolute -inset-4 bg-gradient-to-b from-blue-600/30 to-purple-600/30 rounded-[3rem] blur-xl opacity-50 group-hover:opacity-70 transition duration-1000" />
+                  
+                  {/* Phone Frame */}
+                  <div className="relative rounded-[2.5rem] overflow-hidden border-8 border-[#1a1a1a] bg-black shadow-2xl aspect-[9/16]">
+                    {/* Notch */}
+                    <div className="absolute top-0 left-1/2 -translate-x-1/2 w-1/2 h-7 bg-[#1a1a1a] rounded-b-2xl z-20" />
+                    
+                    {/* Video Player */}
+                    <video 
+                      controls
+                      playsInline
+                      className="w-full h-full object-cover"
+                      poster="/logo.jpg"
+                      style={{ filter: 'brightness(0.9)' }}
+                    >
+                      <source src="/promo.mp4" type="video/mp4" />
+                      Ваш браузер не поддерживает видео.
+                    </video>
+
+                    {/* Overlay Gradient (Bottom) */}
+                    <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-black/80 to-transparent pointer-events-none" />
+                    
+                    {/* Founder Label */}
+                    <div className="absolute bottom-6 left-6 right-6 pointer-events-none">
+                      <div className="text-white font-bold text-lg">Янчик</div>
+                      <div className="text-white/60 text-sm">Основатель Influenta</div>
+                    </div>
+                  </div>
+                </div>
+              </ScrollSection>
+            </div>
+          </div>
         </section>
 
         {/* Features */}
@@ -434,7 +507,6 @@ export default function Home() {
               </div>
               
               <div className="flex items-center gap-2 group cursor-default">
-                <span className="group-hover:text-white/60 transition-colors">Design & Dev</span>
                 <span className="px-2 py-1 rounded-md bg-white/5 border border-white/10 text-white/60 group-hover:bg-blue-500/10 group-hover:border-blue-500/20 group-hover:text-blue-400 transition-all">
                   🪚 by YNCHQ
                 </span>
