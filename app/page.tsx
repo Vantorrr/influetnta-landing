@@ -93,7 +93,7 @@ export default function Home() {
   ]
 
   const stats = [
-    { value: '500+', label: 'Блогеров', icon: Users },
+    { value: '1000+', label: 'Блогеров', icon: Users },
     { value: '1.2M+', label: 'Охват', icon: TrendingUp },
     { value: '0%', label: 'Комиссия', icon: Sparkles },
   ]
