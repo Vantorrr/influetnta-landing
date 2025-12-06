@@ -87,9 +87,9 @@ export default function Home() {
   }
 
   const features = [
-    { icon: BarChart3, title: 'Прозрачная аналитика', desc: 'Реальные данные об охватах и вовлеченности в реальном времени.', gradient: 'from-blue-500 to-cyan-500' },
-    { icon: Shield, title: 'Безопасная сделка', desc: 'Эскроу-система защищает средства до выполнения условий.', gradient: 'from-purple-500 to-pink-500' },
-    { icon: Zap, title: 'Мгновенный запуск', desc: 'Создайте кампанию за 2 минуты. AI подберет блогеров.', gradient: 'from-orange-500 to-yellow-500' },
+    { icon: BarChart3, title: 'Прозрачная аналитика', desc: 'Реальные данные об охватах и вовлеченности каждого блогера.', gradient: 'from-blue-500 to-cyan-500' },
+    { icon: Shield, title: 'Встроенный чат', desc: 'Общайтесь с блогерами прямо в Telegram. Быстро и удобно.', gradient: 'from-purple-500 to-pink-500' },
+    { icon: Zap, title: 'Мгновенный запуск', desc: 'Найдите блогера и начните сотрудничество за 2 минуты.', gradient: 'from-orange-500 to-yellow-500' },
   ]
 
   const stats = [
@@ -266,9 +266,9 @@ export default function Home() {
                 
                 <div className="flex flex-col gap-4">
                   {[
-                    { title: 'Прозрачность', desc: 'Никаких скрытых комиссий и накруток' },
-                    { title: 'Скорость', desc: 'Запуск рекламной кампании за 2 минуты' },
-                    { title: 'Безопасность', desc: 'Гарантия результата или возврат средств' }
+                    { title: 'Всё в Telegram', desc: 'Не нужно регистрироваться на сайтах и скачивать приложения' },
+                    { title: 'Скорость', desc: 'Найдите блогера и свяжитесь с ним за 2 минуты' },
+                    { title: 'Бесплатно', desc: 'Полностью бесплатная платформа без скрытых комиссий' }
                   ].map((item, i) => (
                     <div key={i} className="flex items-start gap-4 p-4 rounded-2xl bg-white/5 border border-white/5 hover:border-blue-500/30 transition-colors">
                       <div className="w-10 h-10 rounded-full bg-blue-500/10 flex items-center justify-center shrink-0">
@@ -431,8 +431,8 @@ export default function Home() {
             <div className="space-y-4">
               {[
                 { q: 'Как начать работу?', a: 'Откройте бота @influenta_bot в Telegram. Регистрация меньше минуты.' },
-                { q: 'Какая комиссия?', a: 'На старте 0%. Мы зарабатываем только когда зарабатываете вы.' },
-                { q: 'Как работает безопасная сделка?', a: 'Средства замораживаются до подтверждения публикации.' },
+                { q: 'Это бесплатно?', a: 'Да! Платформа полностью бесплатна для блогеров и рекламодателей.' },
+                { q: 'Кто может пользоваться?', a: 'Любой блогер или бренд с Telegram аккаунтом. Без ограничений по аудитории.' },
               ].map((item, i) => (
                 <ScrollSection key={i} delay={i * 0.1}>
                   <div className="p-6 rounded-2xl bg-white/[0.02] border border-white/5 hover-lift-card">
